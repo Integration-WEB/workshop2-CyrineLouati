@@ -1,0 +1,4 @@
+@mixin pers ($p1:solid ,$color : yellow, $margin : 3px)
+{
+    border: $p1 $color $margin;
+}

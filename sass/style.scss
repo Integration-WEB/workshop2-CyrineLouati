@@ -1,0 +1,45 @@
+@use "sass:list";
+$white : #ffffff;
+$test-color: #020202 ;
+
+.text{
+color: red;
+font-size: 20px;
+}
+
+textarea, h1{
+    @extend .text;
+}
+
+@import "mixin";
+
+.btn {
+@include pers();
+}
+
+body{
+    background-color: $test-color;
+    @if (background-color != $white){
+        color: $white;
+    }
+}
+
+$langages: "HTML5","CSS3","JAVA","React";
+
+@function first($list){
+    @return nth($list,1);
+}
+
+.text{
+    content: first($langages);
+}
+
+@function last($list){
+    @return nth($list,-1);
+    @return nth($list,lenght($list));
+}
+
+.text{
+    content: last($langages);
+}
+ 
